@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Login</title>
+    <!--<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=kLR3IkDuUMFO-bG6eBhJjyUf4TSBOKGi00LIVrqzgG39Z10QbN6gKlzic8bLAb8gyoG8YZl-JWAdqy5fMkICjcimOWVnB6NecP4T2QP1r3ezO0bMmXpjus8hXYtnBtEBgrxAaA-2B3n25ytBPQRw4ng1r1NVKJNci5GgFuea9pYrekJD1dLdKEwoVsdaoWVtuRcmx_FwzPYHfZG6sPg9SdoubICg8V54C3hcqZeumQIQ8yZ4gXLQZhk1RL5tJQzbCeuTQfa_AerXNih_SJyFzq9bxxoOU0g2qecWQEuJsr925JI71K14ME1maEJ86YkASuly9x9g2WY409naZgDIJBvFPia9_oEJQWp3yXwR0eBy8qHckwb3PwB6jUfWh72KEyICH241RQSRIGFKpHoAGidwenHQ9TTBR-7HV_fvA4YSoUpSyke0RqK44rdZI_PWCUI6RvKNT2gZFFE8rHxeQBB6lDeQiNffUWT125GNSeatNSrFB46FfMdj0SvyRrN6FI0Erw8Eg_atXyY-RkKqyNabPAxEZqHNqaEYMDXPcMiMLkRdw05xQ7gmaAT3iKWsVXY1dad31gxX5RMY87MtO7rSYARcKclbBXKs5-3PUwDwgaLEvCAxC_P5hfUGx_RDWouvV_Ai70JzqJJ1M3ZgDqvrtUH34Hmypf_PB3wluNa92pXZvfQAth02iKWSvSUwaJYXSOFst90_BHcwnLnzBBVHhcG7TpHPDkgCydKwLaefJ4bHDKcFhrchAy6c891bOVjhQ9_CXP_fCZCY43FTf2L39w2mpuDxLPQjZjIaYLiv-l2tXjI9RxmikxBpTM6vlGUPraLMagJMMk7pnUSu1z1Tb6M8i5XtpvJ4G7pixD-v0vMkhhgbq80vrBp3pB2YP6JS0VqZNCij92u92OKqMOy4MO6uFxXt-DTYQl06pCzt6sLWgUnkm53eYSo-3mz3B1wuTNMKZQWFnQu89GVcB5AqK5MkJSO-im1qg8l_eEFUjWGPkF2LxcA6R8MRXa9fQKyewKn2L8OeL1YuzOUcef-x-Ht62vlHsWi6nUOKtuxkUceHy_q91YodPJSgRUHIRyEMCVUfqrEdZDjvbDTrz3qOpO6afRZHUctDuTQEeGazF_B8aoyk3evCgTyEQbaIfMAGDyT3lnMGt5TpnfpdXNLHijx9RC2ruPoAOW2ztCCZM7B7Laeh0-4VoV_jWChzE7n7DLF8Nuq81Kphj_VSgFHYhjdGe2ImrL9rNJxl2XRYTP8IZs9YWjQdTpy9p3UGX0vOwtmAap53YjV6-R0cPl3vipTkrekQFbdwv2_19PLEL57qMmxHbwH8qLhlQ3nAqEn7-zy6IXQ12QxMhkqVH16JH4dvQIwYdGMeEj7B_ibOM8aOlPh4jNJrKd_bkCsin4aPXBDI3MjID5AliqVB9dRydt7yfHRSsHpNHv6rLk9kES9FVTz1rNjmgOFkjip6Y6iMTEDvK0EKmGdjoXqHw5xiD6-oqyEuDMF25HAbhbHZDlQDcJKjinTBaEGiIX-cOwH0FsV9J4C3mTED0Q5skPbtSfSoTe3qU8hzcSle0llPbW6y3WfbF06IrmZNmwSl7jxZ4GKUVDZ0bBiKqJKbE4CcQbXe6ju0iVrWb4dGxuMBazNWc40g6Y4QljKOz7JB_dWMjbUvgD10fRy_HYRbXhqvoTL0giYfAjdwixvoQ7XRPWwjotGv1GQ-58bXxkQhPasujGiDpdQL0eUihe-EBCPD0O-iLhkp7L1rmQW0iGcfMRxbYamtw9ONrREywaIa7ngsQh5fOUDSwCz5JPc4FSeds9zLNUtIAxYBtLrJhuTSBAw_Lw_X_odr-M7WsL6U1psbB8jPpCTLlyCW-h2zESKjZ6BE5Z2t8ND56-h81WXFoIMzZuYhl3Bo-0NuhsIge9raYIEZg1rems5SV2yS7DSy1jEZbXPPZX_u3e1UTcGFy6w3GCj7lQmyDTnW5hKi6KW_e67SbWV59egAT5gYfe0bgOQIkWuttwyCITCLMwHceNIbkn-8RF6EMZKJgYxGb3w3_0ltTzDA6YE9HabpJ0PW7YyXpbUIAFrmbDaSbKUTnJjypzrXa9UZ1vJipTWxUBu4xPIyXq7IPmRpdQBsyd67Qj-NKHJiRrIVXJjzcSxruaC9dcnpPIbjkW5xavcSGS8xXcr9xt2AulBiGdUsX6cTcWR_IPWeUKfb5Z_xO2kdL9P7zLDzlWsgGPD11nhCYVMeHgqlb1jAgq6YQ9UluOTB_EFvmrdPW2esJlq29c4W2DNeyLkS_PwbTNaPM9YrHsoowIeGPvVY03clJ3Q_uemZ0UkSVw3TDIsVnzas8gOco-f5SFXMIHIiVaot5SV7io3a4WE9A4IBm-41huipRzM49WsNtG_T_QK-BUSd1BI" charset="UTF-8"></script></head>-->
+    <!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+	<style>
+		body {
+			font-family: "Segoe UI", sans-serif;
+			font-size:100%;
+			background-color: #bed8ff;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			z-index: -3;
+			font-family: 'Arimo', sans-serif;
+			margin: 0;
+			padding: 0;
+			height: 0%;
+			box-sizing: border-box;
+		}
+		
+		h3 {
+			color:#f90;
+			font-size:24px;
+			font-weight:normal;
+		}
+		
+		h1 {
+			color:#f90;
+			font-size:180%;
+			font-weight:normal;
+		}
+		
+		#contenido {
+			padding: 1rem;
+			margin-left: 180px;
+			justify-content: center;
+			height: 100%;
+			
+		}
+		
+		.abrir-cerrar {
+			color: #eee;
+			text-decoration: none;
+			font-size:120%;   
+		}
+		
+		#cerrar {
+			display:none;
+		}
+		
+		.container {
+					background: #578cd1;
+					text-align: center;
+					font-size: 18px;
+					color: #ee0467;
+					font-weight: bold;
+					border-radius: 5px;
+					border: 8px outset transparent;
+					text-decoration:blink;
+					letter-spacing: 15;
+					font-stretch: extra-expanded;
+					font-style: italic;
+					font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+					box-shadow:10px 5px 5px 5px #000;
+					animation: 25px outset lightblue 5s infinite;			
+		}
+				
+		.producto {
+					background: #578cd1;
+					margin: 0 0 2rem;
+					height: 5rem;
+					display: flexbox;
+					align-items: start;
+		}
+				
+		.center-h {
+					justify-content: center;
+		}
+				
+		.center-v {
+					align-items: center;
+		}
+				
+		.child2 {
+					background: #60e0b0;
+					padding: .2rem;
+		}
+				
+		.validar {
+					background: #578cd1;
+					padding: 0.2rem;
+					margin: 0 0 0rem;
+					height: 27.3rem;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: center;
+					
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mx-auto">
+					<div class="card mt-4 text-center">
+						<div class="card-header">
+							<h1 class="h4">
+								Acceso al sistema
+							</h1>
+						</div>
+						<div class="card-body">
+							<form action="/login" method="post">
+								<div class="mt-3">Usuario:
+									<input type="text" class="form-control" name="usuario" placeholder="Usuario" autofocus>
+								</div>
+								<div class="mt-3">
+									Password:
+									<input type="password" class="form-control" name="password" placeholder="Password">
+								</div>
+								<div class="mt-3">
+								<button class="btn btn-primary w-100">
+									Ingresar
+								</button>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	</html>

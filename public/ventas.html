@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="ventas.html">
+
+<script type="text/javascript" charset="UTF-8"></script>
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    font-size:100%;
+    background-color: #bed8ff;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -3;
+    font-family: 'Arimo', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 0%;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    height: 80%;
+    width: 20%;
+    top: 7rem;
+    left: 1 rem;
+    bottom: 7.1rem;
+    z-index: 1;
+    background-color: #00324b;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+}
+
+.sidebar .boton-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    
+}
+
+.sidebar ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+
+.sidebar ul {
+    margin: 4rem auto;
+    display: block;
+    width: 80%;
+    min-width:200px;
+}
+
+.sidebar a {
+    display: block;
+    font-size: 120%;
+    color: #eee;
+    text-decoration: none;
+    
+}
+
+.sidebar a:hover{
+    color:#fff;
+    background-color: #f90;
+    padding: 1rem;
+}
+
+h3 {
+    color:#f90;
+    font-size:24px;
+    font-weight:normal;
+}
+
+h1 {
+    color:#f90;
+    font-size:180%;
+    font-weight:normal;
+}
+
+#contenido {
+    padding: 1rem;
+    margin-left: 180px;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+.abrir-cerrar {
+    color: #eee;
+    text-decoration: none;
+    font-size:120%;   
+}
+
+
+#cerrar {
+    display:none;
+}
+
+
+.container {
+            background: #578cd1;
+            margin: 0 0 0rem;
+            height: 3rem;
+            display: flex;
+            align-items: start;
+            width: 95%;
+            margin: 20px;
+    		padding: 0px 0px 0px;
+   			text-align: center;
+    		font-size: 18px;
+    		color: #ee0467;
+    		font-weight: bold;
+    		border-radius: 5px;
+    		border: 8px outset transparent;
+    		text-decoration:blink;
+    		letter-spacing: 15;
+			font-stretch: extra-expanded;
+			font-style: italic;
+			font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+			box-shadow:10px 5px 5px 5px #000;
+			animation: 25px outset lightblue 5s infinite;
+			
+}
+
+.container:hover {
+			cursor:none;
+    		font-style:italic;
+    		box-shadow:10px 5px 5px 5px #b0b0b0;
+    		color:#A13B5D;
+    		transition: .3s width;
+    		width:100%;
+}
+        
+.producto {
+            background: #578cd1;
+            margin: 0 0 2rem;
+            height: 5rem;
+            display: flexbox;
+            align-items: start;
+}
+        
+.center-h {
+            justify-content: center;
+}
+        
+.center-v {
+            align-items: center;
+}
+        
+.child2 {
+            background: #60e0b0;
+            padding: .2rem;
+}
+        
+.validar {
+            background: #578cd1;
+            padding: 0.2rem;
+            margin: 0 0 0rem;
+            height: 27.3rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            
+}
+
+/* menu desplegable */
+
+#sidebar ul ul {
+ display:none;
+ position:absolute;
+ top:100%;
+ left:0;
+ background:#eee;
+ padding:0;
+}
+
+/* items del menu desplegable */
+
+#sidebar ul ul li {
+ max-height: 0px;
+ transition: .3s all ease-in;
+ float:none;
+ width:50px
+}
+
+/* enlaces de los items del menu desplegable */
+
+#sidebar ul ul a {
+ line-height:120%;
+ padding:0px 5px;
+}
+
+/* items del menu desplegable al pasar el ratón */
+
+#sidebar ul li:hover > ul {
+ 	max-height: 500px;
+	transition: .3s all ease-in;
+ 	display:block;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container start-h center-h center-v">
+
+        <h2 align="center">Cadena de Tiendas La Generica</h2>
+</div>
+
+
+<div id="sidebar" class="sidebar">
+<a class="boton-cerrar"></a>
+<ul class="menu">
+	<li><a id="productos" class="abrir-cerrar" href="productos.html">Productos</a></li></br>
+	<li><a id="clientes" class="abrir-cerrar" href="clientes.html">Clientes</a></li></br>
+	<li><a id="proveedores" class="abrir-cerrar" href="prove.html">Proveedores</a></li></br>
+	<li><a id="ventas" class="abrir-cerrar" href="ventas.html">Ventas</a></li></br>
+	<li><a id="reportes" class="abrir-cerrar" href="listadoClientes.html">Reportes</a></li></br>
+	<li><a id="consolidacion" class="abrir-cerrar" href="consolidacion.html">Consolidacion</a></li></br>
+    <li><a id="logOut" class="abrir-cerrar" href="/users/logout">LogOut</a></li></br>
+</ul>
+</div>
+
+
+<div id="contenido">
+
+  <div class="validar center-h center-v">
+        
+        <form action="/ventas" method="post" id="form">
+            <table>
+                <tr><td><label>Cedula &nbsp&nbsp&nbsp</label><input id="cedulaC" type="text" name="cedulaC" autofocus required>&nbsp&nbsp&nbsp<button id="findClient" value="Consultar">Consultar</button>&nbsp&nbsp&nbsp
+                    <label>Cliente &nbsp&nbsp&nbsp</label></td>&nbsp&nbsp&nbsp<td><input id="nombreC" type="text" name="nombreC"></td>&nbsp&nbsp&nbsp
+                    <td><label>&nbsp&nbsp&nbsp Consec. </label></td><td><input id="consec" type="text" name="consec"></td></tr>
+                    <tr style="margin-top: 10px; margin-bottom: 10px; display: inline-block;"></tr>
+            </table><br></br>
+            <div class="form-msg"></div>
+        
+            <table>
+                <tr><td align="center"><label>Cod. Producto</label></td><td></td><td align="center"><label>Nombre Producto &nbsp&nbsp&nbsp</label></td><td align="center"><label>Cant. &nbsp&nbsp&nbsp</label></td><td align="center"><label>Vlr. Total &nbsp&nbsp&nbsp</label></td></tr>
+                <tr><td><input id="prod1" type="number" min="1" name="prod1" required>&nbsp&nbsp&nbsp</td><td><button id="findProduct1">Consultar</button></td>
+                    <td><input id="nomProd1" type="text" name="nomProd1">&nbsp&nbsp&nbsp</td>
+                    <td><input id="cantProd1" type="number" min="0" name="cantProd1">&nbsp&nbsp&nbsp</td>
+                    <td><input id="vlrTotal1" type="text" name="vlrTotal1">&nbsp&nbsp&nbsp</td></tr>
+                <tr><td><input id="prod2" type="number" min="1" name="prod2">&nbsp&nbsp&nbsp</td><td><button id="findProduct2">Consultar</button></td>
+                    <td><input id="nomProd2" type="text" name="nomProd2">&nbsp&nbsp&nbsp</td>
+                    <td><input id="cantProd2" type="number" min="0" name="cantProd2">&nbsp&nbsp&nbsp</td>
+                    <td><input id="vlrTotal2" type="text" name="vlrTotal2">&nbsp&nbsp&nbsp</td></tr>
+                <tr><td><input id="prod3" type="number" min="1" name="prod3">&nbsp&nbsp&nbsp</td><td><button id="findProduct3">Consultar</button></td>
+                    <td><input id="nomProd3" type="text" name="nomProd3">&nbsp&nbsp&nbsp</td>
+                    <td><input id="cantProd3" type="number" min="0" name="cantProd3">&nbsp&nbsp&nbsp</td>
+                    <td><input id="vlrTotal3" type="text" name="vlrTotal3">&nbsp&nbsp&nbsp</td></tr>
+                <tr style="margin-top: 10px; margin-bottom: 10px; display: inline-block;"></tr>
+
+                <tr><td></td><td></td><td></td><td><label>Total Venta</label></td><td><input id="totalVenta" type="text" name="totalVenta"></tr>
+                <tr><td></td><td></td><td></td><td><label>Total Iva</label><td><input id="totalIva" type="text" name="totalIva"></tr>
+                <tr><td></td><td></td><td></td><td><label>Total con Iva</label><td><input id="totalConIva" type="text" name="totalConIva"></tr>
+            </table>
+            <br>
+            <tr><td><button id="findConfirmar">Confirmar</button></td><td><button id="createSell">Enviar Venta</button></td></tr>
+                <div class="form-msg"></div>
+        </form>
+    </div>
+</div>
+<script>
+    
+    const form = document.querySelector('#form')
+    const find = document.querySelector('#findClient')
+    const findProduct1 = document.querySelector('#findProduct1')
+    const findProduct2 = document.querySelector('#findProduct2')
+    const findProduct3 = document.querySelector('#findProduct3')
+    const findConfirmar = document.querySelector('#findConfirmar')
+    const createVentas = document.querySelector('#findConfirmar')
+    var precioCompra1;
+    var precioCompra2;
+    var precioCompra3;
+    var totalIva1 = 0;
+    var totalIva2 = 0; 
+    var totalIva3 = 0;
+    var totalConIva = document.querySelector('#totalConIva');
+    var valorTotal1 = document.querySelector('#vlrTotal1');
+    var valorTotal2 = document.querySelector('#vlrTotal2');
+    var valorTotal3 = document.querySelector('#vlrTotal3');
+    var totalVenta = document.querySelector('#totalVenta');
+    var totalIva = document.querySelector('#totalIva');
+
+    const enviarVenta = document.querySelector('#createSell');
+
+    var result = document.querySelector(".form-msg");
+
+    find.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+        const inputCedula = document.querySelector("#cedulaC")
+        const valorCed = inputCedula.value
+        fetch('http://localhost:8082/api/db_clientes/'+valorCed)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarCliente(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+    });
+
+    findProduct1.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+        const inputProd1 = document.querySelector("#prod1")
+        const valorProd1 = inputProd1.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd1)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarProducto1(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+    });
+
+    findProduct2.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+        const inputProd2 = document.querySelector("#prod2")
+        const valorProd2 = inputProd2.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd2)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarProducto2(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+    });
+
+    findProduct3.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+        const inputProd3 = document.querySelector("#prod3")
+        const valorProd3 = inputProd3.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd3)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarProducto3(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+    });
+
+
+    function agregarCliente(data)
+    {
+        const cedula = document.querySelector("#cedulaC");
+        const nombre = document.querySelector("#nombreC");
+        
+        cedula.value = data.cedulaCliente;
+        nombre.value = data.nombreCliente;
+    }
+
+    function agregarProducto1(data)
+    {
+        const prod1 = document.querySelector("#prod1");
+        const nombre1 = document.querySelector("#nomProd1");
+        const cantidad1 = document.querySelector("#cantProd1");
+        const cantidad1V = cantidad1.value;
+        
+        prod1.value = data.codProducto;
+        nombre1.value = data.nomProducto;
+    }
+
+    function agregarProducto2(data)
+    {
+        const prod2 = document.querySelector("#prod2");
+        const nombre2 = document.querySelector("#nomProd2");
+        const cantidad2 = document.querySelector("#cantProd2");
+        const cantidad2V = cantidad2.value;
+                                
+        prod2.value = data.codProducto;
+        nombre2.value = data.nomProducto;
+    }
+
+    function agregarProducto3(data)
+    {
+        const prod3 = document.querySelector("#prod3");
+        const nombre3 = document.querySelector("#nomProd3");
+        const cantidad3 = document.querySelector("#cantProd3");
+        const cantidad3V = cantidad3.value;
+                                
+        prod3.value = data.codProducto;
+        nombre3.value = data.nomProducto;
+    }
+
+    findConfirmar.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+
+        const inputProd1 = document.querySelector("#prod1")
+        const valorProd1 = inputProd1.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd1)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarValor1(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+       
+    });
+
+    function agregarValor1(data)
+    {
+        var cantidad1 = document.querySelector("#cantProd1");
+        var cantidad1V = cantidad1.value;
+        const inputProd1 = document.querySelector("#prod1");
+        const valorProd1 = inputProd1.value;
+                
+        if (inputProd1.value >=1 && cantidad1.  value >= 0){ valorTotal1.value = cantidad1V*data.precioCompra*(1+data.ivaCompra/100).toFixed(2);
+            totalIva1 = (valorTotal1.value-cantidad1V*data.precioCompra).toFixed(2);
+            precioCompra1 = cantidad1V*data.precioCompra;}                           
+        else { 
+            valorTotal1.value = 0;
+            cantidad1.value = 0;
+            totalIva1.value = 0;
+            precioCompra1 = 0;
+        }
+    }
+      
+     
+    findConfirmar.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+
+        const inputProd2 = document.querySelector("#prod2")
+        const valorProd2 = inputProd2.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd2)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarValor2(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+       
+    });
+
+    function agregarValor2(data)
+    {
+        const cantidad2 = document.querySelector("#cantProd2");
+        const cantidad2V = cantidad2.value;
+        const inputProd2 = document.querySelector("#prod2");
+        const valorProd2 = inputProd2.value;
+                
+        if (inputProd2.value >=1 && cantidad2.value >= 0){ valorTotal2.value = cantidad2V*data.precioCompra*(1+data.ivaCompra/100).toFixed(2);
+            totalIva2 = (valorTotal2.value-cantidad2V*data.precioCompra).toFixed(2);
+            precioCompra2 = cantidad2V*data.precioCompra;}    
+        else { 
+            valorTotal2.value = 0;
+            totalIva2.value = 0;
+            cantidad2.value = 0;
+            precioCompra2 = 0;
+        }
+    }
+        
+
+    findConfirmar.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+
+        const inputProd3 = document.querySelector("#prod3")
+        const valorProd3 = inputProd3.value
+        fetch('http://localhost:8080/api/db_productos/'+valorProd3)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarValor3(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+       
+    });
+
+    function agregarValor3(data)
+    {
+        const cantidad3 = document.querySelector("#cantProd3");
+        const cantidad3V = cantidad3.value;
+        const inputProd3 = document.querySelector("#prod3");
+        const valorProd3 = inputProd3.value;
+        
+        
+        if (inputProd3.value >=1 && cantidad3.value >= 0){ valorTotal3.value = cantidad3V*data.precioCompra*(1+data.ivaCompra/100).toFixed(2);
+            totalIva3 = (valorTotal3.value-cantidad3V*data.precioCompra).toFixed(2);
+            precioCompra3 = cantidad3V*data.precioCompra;}    
+        else { 
+            valorTotal3.value = 0;
+            totalIva3.value = 0;
+            cantidad3.value = 0;
+            precioCompra3 = 0;
+        }
+    }
+        
+        findConfirmar.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        //debugger
+
+        fetch('http://localhost:8080/api/db_productos/')
+        .then(res => res.json())
+        .then( data => {
+            totalConIva.value = parseFloat(valorTotal1.value) + parseFloat(valorTotal2.value) + parseFloat(valorTotal3.value);
+            totalIva.value = parseFloat(totalIva1) + parseFloat(totalIva2) + parseFloat(totalIva3);
+            totalVenta.value= parseFloat(totalConIva.value) - parseFloat(totalIva.value);
+        }).catch((error) =>{
+            console.error(error);
+        })
+       
+    });
+
+    function agregarCampos(data)
+    {
+        const codigoVenta = document.querySelector("#consec");
+        const cedula = document.querySelector("#cedulaC");
+        const precioCompraTotal = document.querySelector("#totalVenta");
+        const ivaCompraTotal = document.querySelector("#totalIva");
+        const precioVentaTotal = document.querySelector("#totalConIva");
+
+        const prod1 = document.querySelector("#prod1");
+        const cantProd1 = document.querySelector("#cantProd1");
+        const vlrTotal1 = document.querySelector("#vlrTotal1");
+        const prod2 = document.querySelector("#prod2");
+        const cantProd2 = document.querySelector("#cantProd2");
+        const vlrTotal2 = document.querySelector("#vlrTotal2");
+        const prod3 = document.querySelector("#prod3");
+        const cantProd3 = document.querySelector("#cantProd3");
+        const vlrTotal3 = document.querySelector("#vlrTotal3");
+
+        codigoVenta.value = data.codigoVenta;
+        cedula.value = data.cedulaCliente;
+        precioCompraTotal.value = data.precioCompraTotal;
+        ivaCompraTotal.value = data.ivaCompraTotal;
+        precioVentaTotal.value = data.precioVentaTotal;
+
+        precioCompra1.value = data.precioCompra;
+        ivaCompra1.value = data.ivaCompra;
+        vlrTotal1.value = data.precioVenta;
+        precioCompra2.value = data.precioCompra;
+        ivaCompra2.value = data.ivaCompra;
+        vlrTotal2.value = data.precioVenta;
+        precioCompra3.value = data.precioCompra;
+        ivaCompra3.value = data.ivaCompra;
+        vlrTotal3.value = data.precioVenta;
+
+    }
+
+    enviarVenta.addEventListener('click', (e) =>{
+        //debugger
+        e.preventDefault();
+        const fd = new FormData(e.target.form);
+        fd.append('precioCompra1', precioCompra1);
+        fd.append('ivaCompra1', totalIva1);
+        fd.append('precioCompra2', precioCompra2);
+        fd.append('ivaCompra2', totalIva2);
+        fd.append('precioCompra3', precioCompra3);
+        fd.append('ivaCompra3', totalIva3);
+        fetch('/ventas', {
+            method:'POST',
+            body: fd
+        })
+        console.log(fd);
+    });
+     
+</script>
+
+</body>
+</html>

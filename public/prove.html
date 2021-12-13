@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+
+<script type="text/javascript" charset="UTF-8"></script>
+
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    font-size:100%;
+    background-color: #bed8ff;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -3;
+    font-family: 'Arimo', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 0%;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    height: 80%;
+    width: 20%;
+    top: 7rem;
+    left: 1 rem;
+    bottom: 7.1rem;
+    z-index: 1;
+    background-color: #00324b;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+}
+
+.sidebar .boton-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+}
+
+.sidebar ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+
+.sidebar ul {
+    margin: 4rem auto;
+    display: block;
+    width: 80%;
+    min-width:200px;
+}
+
+.sidebar a {
+    display: block;
+    font-size: 120%;
+    color: #eee;
+    text-decoration: none;
+    
+}
+
+.sidebar a:hover{
+    color:#fff;
+    background-color: #f90;
+    padding: 1rem;
+}
+
+h3 {
+    color:#f90;
+    font-size:24px;
+    font-weight:normal;
+}
+
+h1 {
+    color:#f90;
+    font-size:180%;
+    font-weight:normal;
+}
+
+#contenido {
+    padding: 1rem;
+    margin-left: 180px;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+.abrir-cerrar {
+    color: #eee;
+    text-decoration: none;
+    font-size:120%;   
+}
+
+#cerrar {
+    display:none;
+}
+
+
+.container {
+            background: #578cd1;
+            margin: 0 0 0rem;
+            height: 3rem;
+            display: flex;
+            align-items: start;
+            width: 95%;
+            margin: 20px;
+    		padding: 0px 0px 0px;
+   			text-align: center;
+    		font-size: 18px;
+    		color: #ee0467;
+    		font-weight: bold;
+    		border-radius: 5px;
+    		border: 8px outset transparent;
+    		text-decoration:blink;
+    		letter-spacing: 15;
+			font-stretch: extra-expanded;
+			font-style: italic;
+			font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+			box-shadow:10px 5px 5px 5px #000;
+			animation: 25px outset lightblue 5s infinite;
+			
+}
+
+.container:hover {
+			cursor:none;
+    		font-style:italic;
+    		box-shadow:10px 5px 5px 5px #b0b0b0;
+    		color:#A13B5D;
+    		transition: .3s width;
+    		width:100%;
+}
+        
+.producto {
+            background: #578cd1;
+            margin: 0 0 2rem;
+            height: 5rem;
+            display: flexbox;
+            align-items: start;
+}
+        
+.center-h {
+            justify-content: center;
+}
+        
+.center-v {
+            align-items: center;
+}
+        
+.child2 {
+            background: #60e0b0;
+            padding: .2rem;
+}
+        
+.validar {
+            background: #578cd1;
+            padding: 0.2rem;
+            margin: 0 0 0rem;
+            height: 27.3rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            
+}
+
+/* menu desplegable */
+
+#sidebar ul ul {
+ display:none;
+ position:absolute;
+ top:100%;
+ left:0;
+ background:#eee;
+ padding:0;
+}
+
+/* items del menu desplegable */
+
+#sidebar ul ul li {
+ max-height: 0px;
+ transition: .3s all ease-in;
+ float:none;
+ width:50px
+}
+
+/* enlaces de los items del menu desplegable */
+
+#sidebar ul ul a {
+ line-height:120%;
+ padding:0px 5px;
+}
+
+/* items del menu desplegable al pasar el ratón */
+
+#sidebar ul li:hover > ul {
+ 	max-height: 500px;
+	transition: .3s all ease-in;
+ 	display:block;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container start-h center-h center-v">
+
+        <h2 align="center">Cadena de Tiendas La Generica</h2>
+</div>
+
+
+<div id="sidebar" class="sidebar">
+<a class="boton-cerrar"></a>
+<ul class="menu">
+	<li><a id="productos" class="abrir-cerrar" href="productos.html">Productos</a></li></br>
+	<li><a id="clientes" class="abrir-cerrar" href="clientes.html">Clientes</a></li></br>
+	<li><a id="proveedores" class="abrir-cerrar" href="proveedores.html">Proveedores</a></li></br>
+	<li><a id="ventas" class="abrir-cerrar" href="ventas.html">Ventas</a></li></br>
+	<li><a id="reportes" class="abrir-cerrar" href="listadoClientes.html">Reportes</a></li></br>
+	<li><a id="consolidacion" class="abrir-cerrar" href="consolidacion.html">Consolidacion</a></li></br>
+    <li><a id="logOut" class="abrir-cerrar" href="/users/logout">LogOut</a></li></br>
+</ul>
+</div>
+<div id="contenido">
+
+  <div class="validar center-h center-v">
+        
+        <form action="/proveedor" method="post" id="form">
+            <table>
+                <tr><td><label>NIT</label></td><td><input id="nit" type="text" name="nit" autofocus required></td><td></td>
+                    <td><label>Ciudad</label></td><td><input id="ciudad" type="text" name="ciudad"></td></tr>
+                <tr style="margin-top: 10px; margin-bottom: 10px; display: inline-block;"></tr>
+                <tr><td><label>Nombre Completo</label></td><td><input id="nombreC" type="text" name="nombreC"></td><td></td>
+                    <td><label>Telefono</label></td><td><input id="telefono" type="text" name="telefono"></td></tr>
+                <tr style="margin-top: 10px; margin-bottom: 10px; display: inline-block;"></tr>
+                <tr><td><label>Dirección</label></td><td><input id="direccionC" type="text" name="direccionC"></td></tr>
+            </table>	
+            <div>
+                <div><h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="submit" id="find" value="Consultar">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="submit" id="create" value="Crear"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="submit" id="update" value="Actualizar"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="submit" id="delete" value="Borrar"></h3></div>
+            </div>
+            <div class="form-msg"></div>
+        </form>
+    </div>
+</div>
+<script>
+    const form = document.querySelector('#form')
+    const create = document.querySelector('#create')
+    const find = document.querySelector('#find')
+    const update = document.querySelector('#update')
+    const del = document.querySelector('#delete')
+
+    var result = document.querySelector(".form-msg");
+
+    create.addEventListener('click',(event) => {
+        //debugger
+        event.preventDefault()
+        const formData = new FormData(event.target.form)
+        fetch('./create', {
+            method:'POST',
+            body: formData,
+        })
+        result.innerHTML = "Proveedor Creado";
+        form.reset();
+    });
+
+    update.addEventListener('click', (event) => {
+        event.preventDefault()
+        const fd = new FormData(event.target.form)
+        fetch('/update', {
+            method: 'PUT',
+            body: fd, 
+        })
+    });
+
+    find.addEventListener('click',(ev) => {
+        ev.preventDefault()
+        const inputNit = document.querySelector("#nit");
+        const valorNit = inputNit.value;
+        fetch('http://localhost:8081/api/db_proveedores/'+valorNit)
+        .then(res => res.json())
+        .then( data => {
+            console.log(data);
+            agregarCampos(data);
+        }).catch((error) =>{
+            console.error(error);
+        })
+    });
+
+    del.addEventListener('click', (event) => {
+        event.preventDefault()
+        const inputNit = document.querySelector("#nit");
+        const valorNit = inputNit.value;
+        fetch('http://localhost:8081/api/db_proveedores/'+valorNit, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({nit: valorNit})
+        }).then((response) => {
+            if (response.ok) {
+            result.innerHTML = "Proveedor Eliminado";
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+        form.reset();
+    });
+
+    function agregarCampos(data)
+    {
+        const nombre = document.querySelector("#nombreC");
+        const direccion = document.querySelector("#direccionC");
+        const ciudad = document.querySelector("#ciudad");
+        const tel = document.querySelector("#telefono");
+
+        nombre.value = data.nombreProveedor;
+        direccion.value = data.direccionProveedor;
+        ciudad.value = data.ciudad;
+        tel.value = data.telefonoProveedor;
+    }
+
+</script>
+</body>
+</html>
