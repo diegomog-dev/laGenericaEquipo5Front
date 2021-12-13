@@ -50,9 +50,9 @@ app.use(require('./routes/users'));
 router.get('/clientes.html', isAuthenticated);
 router.get('/prove.html', isAuthenticated);
 router.get('/ventas.html', isAuthenticated);
-//router.get('/listadoClientes.html', isAuthenticated);
-//router.get('/ventasClientes.html', isAuthenticated);
-//router.get('/consolidacion.html', isAuthenticated);
+router.get('/listadoClientes.html', isAuthenticated);
+router.get('/ventasClientes.html', isAuthenticated);
+router.get('/consolidacion.html', isAuthenticated);
 
 //Settings
 app.set('port', process.env.PORT || 3000);
